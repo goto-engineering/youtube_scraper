@@ -41,10 +41,12 @@ defmodule YoutubeScraper do
 	@instance "invidious.namazso.eu"
 
 	def start do
+    # Comment this in once to create the SQLite database
 		# :ok = Repo.__adapter__().storage_up(Repo.config())
 
 		{:ok, _} = Supervisor.start_link([Repo], strategy: :one_for_one)
 
+    # Comment this in once to create the migration
 		# Ecto.Migrator.run(Repo, [{0, CreateVideosMigration}], :up, all: true, log_sql: :debug)
 
 		new_content =
