@@ -72,15 +72,12 @@ defmodule YoutubeScraper do
       videos = grab_channel(url)
 
       filtered_videos =
-        videos
-        |> Enum.filter(fn {_name, url} ->
-          in_db =
-            Video
-            |> where(url: ^url)
-            |> Repo.all()
-            |> Enum.count()
-
-          in_db == 0
+        Enum.filter(videos, fn {_name, url} ->
+          Video
+          |> where(url: ^url)
+          |> Repo.all()
+          |> Enum.count()
+          |> then(&(&1 == 0))
         end)
 
       %{name: channel_name, videos: filtered_videos}
