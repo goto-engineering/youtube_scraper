@@ -1,0 +1,8 @@
+defmodule Channels do
+  def all do
+    [
+      {"Saturday Night Live", "channel/UCqFzWxSCi39LnW1JKFR3efg"},
+      {"ElixirConf", "c/ElixirConf"}
+    ]
+  end
+end
