@@ -8,7 +8,7 @@ It provides each individual video URL in a line w/ the title commented out so yo
 
 Comment in the Ecto lines for creating and migrating the database on first run, then comment them back out or they might overwrite the existing database.
 
-It is recommended you symlink the executable `youtube_scraper.exs` script to `/usr/local/bin` or somewhere else in your path.
+It is recommended you symlink the executable `youtube_scraper.exs` script to `/usr/local/bin/youtube_scraper` or somewhere else in your path.
 
 ## Configuring channels to scrape
 
